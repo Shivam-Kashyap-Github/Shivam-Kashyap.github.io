@@ -1,0 +1,406 @@
+/* ============================================ */
+/* COMPREHENSIVE RESPONSIVE DESIGN */
+/* ============================================ */
+
+/* Large Tablets and Small Desktops */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 4.5rem;
+    }
+
+    .hero .tagline {
+        font-size: 1.4rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+
+    .about-content,
+    .project-content {
+        padding: 2.5rem;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+
+    /* Typography Scaling */
+    .hero h1 {
+        font-size: 3.5rem;
+        letter-spacing: -0.04em;
+    }
+
+    .hero .tagline {
+        font-size: 1.3rem;
+        padding: 0 1rem;
+    }
+
+    .hero {
+        padding: 140px 0 100px;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    /* Navigation - Hide links */
+    .nav-links a:not(.theme-toggle) {
+        display: none;
+    }
+
+    .nav-links {
+        gap: 0;
+    }
+
+    /* Logo Scaling */
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .logo-image {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Single Column Layouts */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .skills-grid {
+        justify-content: center;
+    }
+
+    /* Card Padding Adjustments */
+    .about-content {
+        padding: 2rem;
+    }
+
+    .project-content {
+        padding: 2rem;
+    }
+
+    .about-content h2,
+    .section h2 {
+        font-size: 2rem;
+    }
+
+    .project-content h3 {
+        font-size: 1.4rem;
+    }
+
+    /* Button Sizing */
+    .btn {
+        padding: 1rem 2.5rem;
+        font-size: 1rem;
+    }
+
+    /* Contact Section */
+    .contact p {
+        font-size: 1.05rem;
+        padding: 0 1rem;
+    }
+}
+
+/* Mobile Landscape & Small Tablets */
+@media (max- width: 640px) {
+
+    /* Further Typography Reduction */
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero .tagline {
+        font-size: 1.1rem;
+    }
+
+    .hero {
+        padding: 120px 0 80px;
+    }
+
+    /* Compact Spacing */
+    .section {
+        padding: 50px 0;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Logo */
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    .logo-image {
+        width: 36px;
+        height: 36px;
+    }
+
+    /* Cards */
+    .about-content,
+    .project-content {
+        padding: 1.8rem;
+        border-radius: 1rem;
+    }
+
+    .about-content h2,
+    .section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .about-content p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .project-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .project-content p {
+        font-size: 1rem;
+    }
+
+    /* Skills */
+    .skill-tag {
+        padding: 0.7rem 1.4rem;
+        font-size: 0.9rem;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 0.9rem 2rem;
+        font-size: 0.95rem;
+    }
+
+    /* Theme Toggle */
+    .theme-toggle {
+        padding: 0.55rem;
+    }
+
+    .theme-toggle svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    /*  Footer */
+    footer {
+        font-size: 0.85rem;
+        padding: 1.5rem 0;
+    }
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+
+    /* Hero Section - Mobile Optimized */
+    .hero h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        line-height: 1.1;
+    }
+
+    .hero .tagline {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 2rem;
+    }
+
+    .hero {
+        padding: 100px 0 60px;
+    }
+
+    /* Very Compact Spacing */
+    .section {
+        padding: 40px 0;
+    }
+
+    .container {
+        padding: 0 12px;
+    }
+
+    /* Header */
+    header {
+        padding: 0.8rem 0;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .logo-image {
+        width: 32px;
+        height: 32px;
+        padding: 4px;
+    }
+
+    .logo span {
+        display: none;
+        /* Hide full name on very small screens */
+    }
+
+    /* Cards - Maximum Compactness */
+    .about-content,
+    .project-content {
+        padding: 1.5rem;
+        border-radius: 0.8rem;
+    }
+
+    .about-content h2,
+    .section h2 {
+        font-size: 1.6rem;
+        margin-bottom: 0.7rem;
+    }
+
+    .about-content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .project-content h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .project-content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1.2rem;
+    }
+
+    .project-link {
+        font-size: 0.9rem;
+    }
+
+    /* Skills - Smaller Tags */
+    .skill-tag {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 0.85rem 1.8rem;
+        font-size: 0.9rem;
+        border-radius: 1.5rem;
+    }
+
+    /* Contact */
+    .contact p {
+        font-size: 0.95rem;
+        padding: 0 0.5rem;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+        gap: 1.2rem;
+    }
+
+    /* Skills Grid - Responsive Wrapping */
+    .skills-grid {
+        gap: 0.7rem;
+    }
+
+    /* Theme Toggle */
+    .theme-toggle {
+        padding: 0.5rem;
+    }
+
+    .theme-toggle svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* Scroll Progress */
+    .scroll-progress-container {
+        height: 2px;
+    }
+
+    /* Increased opacity and enhanced shadows for mobile */
+    :root {
+        --surface-color: rgba(255, 255, 255, 0.20);
+    }
+
+    [data-theme="dark"] {
+        --surface-color: rgba(15, 23, 42, 0.20);
+    }
+
+    /* Enhanced text shadows for mobile */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+    }
+
+    [data-theme="dark"] h1,
+    [data-theme="dark"] h2,
+    [data-theme="dark"] h3,
+    [data-theme="dark"] h4,
+    [data-theme="dark"] h5,
+    [data-theme="dark"] h6 {
+        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.9), 0 0 25px rgba(96, 165, 250, 0.4);
+    }
+
+    .about-content p,
+    .project-content p,
+    .contact p,
+    .skill-tag {
+        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    [data-theme="dark"] .about-content p,
+    [data-theme="dark"] .project-content p,
+    [data-theme="dark"] .contact p,
+    [data-theme="dark"] .skill-tag {
+        text-shadow: 0 1px 8px rgba(0, 0, 0, 0.9), 0 0 12px rgba(96, 165, 250, 0.25);
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 320px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero .tagline {
+        font-size: 0.9rem;
+    }
+
+    .about-content,
+    .project-content {
+        padding: 1.2rem;
+    }
+
+    .about-content h2,
+    .section h2 {
+        font-size: 1.4rem;
+    }
+
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Landscape Orientation Adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        padding: 80px 0 60px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .section {
+        padding: 40px 0;
+    }
+}

@@ -1,4 +1,4 @@
-/* Enhanced Design System with Maximum Transparency */
+/* Enhanced Glassmorphism Design System */
 :root {
     /* Light Theme */
     --primary-color: #3b82f6;
@@ -6,18 +6,25 @@
     --accent-color: #8b5cf6;
     --ai-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
     --background-color: #f0f4f8;
-    --surface-color: rgba(255, 255, 255, 0.25);
-    /* Much more transparent */
-    --text-primary: #0a1628;
-    --text-secondary: #1e3a5f;
-    --border-color: rgba(59, 130, 246, 0.4);
-    --card-hover-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25), 0 0 30px rgba(59, 130, 246, 0.3);
+    --surface-color: rgba(255, 255, 255, 0.12);
+    /* Enhanced glassmorphism */
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --border-color: rgba(59, 130, 246, 0.3);
+    --border-gradient: linear-gradient(145deg, rgba(255, 255, 255, 0.4), rgba(59, 130, 246, 0.2));
+    --card-hover-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 30px rgba(59, 130, 246, 0.3);
     --glow-color: rgba(139, 92, 246, 0.7);
     --circuit-color: rgba(59, 130, 246, 0.6);
 
+    /* Uniform Text Shadows */
+    --text-shadow-heading: 0 2px 12px rgba(0, 0, 0, 0.4);
+    --text-shadow-body: 0 1px 8px rgba(0, 0, 0, 0.3);
+    --text-shadow-accent: 0 2px 10px rgba(59, 130, 246, 0.4);
+
     --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-heading: 'Space Grotesk', sans-serif;
-    --glass-blur: 28px;
+    --glass-blur: 32px;
+    --glass-saturation: 180%;
 }
 
 [data-theme="dark"] {
@@ -25,14 +32,20 @@
     --accent-color: #d8b4fe;
     --ai-gradient: linear-gradient(135deg, #60a5fa 0%, #d8b4fe 100%);
     --background-color: #030712;
-    --surface-color: rgba(15, 23, 42, 0.2);
-    /* Very transparent */
-    --text-primary: #f8fafc;
+    --surface-color: rgba(15, 23, 42, 0.12);
+    /* Enhanced glassmorphism */
+    --text-primary: #f1f5f9;
     --text-secondary: #cbd5e1;
-    --border-color: rgba(96, 165, 250, 0.5);
-    --card-hover-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.8), 0 0 40px rgba(96, 165, 250, 0.4);
+    --border-color: rgba(96, 165, 250, 0.3);
+    --border-gradient: linear-gradient(145deg, rgba(96, 165, 250, 0.4), rgba(216, 180, 254, 0.2));
+    --card-hover-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 40px rgba(96, 165, 250, 0.4);
     --glow-color: rgba(216, 180, 254, 0.9);
     --circuit-color: rgba(96, 165, 250, 0.7);
+
+    /* Uniform Text Shadows */
+    --text-shadow-heading: 0 2px 15px rgba(0, 0, 0, 0.8), 0 0 20px rgba(96, 165, 250, 0.3);
+    --text-shadow-body: 0 1px 10px rgba(0, 0, 0, 0.7), 0 0 12px rgba(96, 165, 250, 0.2);
+    --text-shadow-accent: 0 2px 12px rgba(96, 165, 250, 0.5);
 }
 
 * {
@@ -102,6 +115,7 @@ body::after {
     pointer-events: none;
 }
 
+/* Uniform Heading Styles */
 h1,
 h2,
 h3,
@@ -112,7 +126,7 @@ h6 {
     color: var(--text-primary);
     line-height: 1.2;
     letter-spacing: -0.03em;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    text-shadow: var(--text-shadow-heading);
     font-weight: 700;
 }
 
@@ -150,17 +164,18 @@ a {
     padding: 100px 0;
 }
 
-/* Header & Navigation */
+/* Header & Navigation - Enhanced Glassmorphism */
 header {
     background: var(--surface-color);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 2px solid var(--border-color);
+    border-bottom: 2px solid;
+    border-image: var(--border-gradient) 1;
     padding: 1rem 0;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 nav {
@@ -250,7 +265,7 @@ nav {
     color: var(--text-secondary);
     position: relative;
     padding: 0.5rem 0;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    text-shadow: var(--text-shadow-body);
 }
 
 .nav-links a:hover,
@@ -329,7 +344,7 @@ nav {
     margin: 0 auto 2.5rem;
     animation: fadeInUp 0.8s ease-out 0.2s backwards;
     min-height: 1.6em;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    text-shadow: var(--text-shadow-heading);
 }
 
 .btn {
@@ -344,7 +359,7 @@ nav {
     position: relative;
     overflow: hidden;
     backdrop-filter: blur(8px);
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 .btn-primary {
@@ -380,16 +395,18 @@ nav {
     border-color: white;
 }
 
-/* About Section */
+/* About Section - Enhanced Glassmorphism */
 .about-content {
     background: var(--surface-color);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
     padding: 3.5rem;
     border-radius: 1.2rem;
-    border: 2px solid var(--border-color);
+    border: 2px solid;
+    border-image: var(--border-gradient) 1;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .about-content::before {
@@ -422,7 +439,7 @@ nav {
     line-height: 1.8;
     color: var(--text-primary);
     font-weight: 500;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    text-shadow: var(--text-shadow-body);
 }
 
 /* Projects Grid */
@@ -435,13 +452,15 @@ nav {
 
 .project-card {
     background: var(--surface-color);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
     border-radius: 1.2rem;
     overflow: hidden;
-    border: 2px solid var(--border-color);
+    border: 2px solid;
+    border-image: var(--border-gradient) 1;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .project-card::before {
@@ -500,7 +519,7 @@ nav {
     margin-bottom: 1.5rem;
     font-size: 1.05rem;
     line-height: 1.7;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    text-shadow: var(--text-shadow-body);
 }
 
 .project-link {
@@ -511,7 +530,7 @@ nav {
     align-items: center;
     gap: 0.4rem;
     transition: gap 0.2s ease;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    text-shadow: var(--text-shadow-accent);
 }
 
 .project-link:hover {
@@ -530,16 +549,19 @@ nav {
 
 .skill-tag {
     background: var(--surface-color);
-    backdrop-filter: blur(var(--glass-blur));
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
     color: var(--text-primary);
     padding: 0.85rem 1.7rem;
     border-radius: 2rem;
     font-weight: 600;
     font-size: 1rem;
-    border: 2px solid var(--border-color);
+    border: 2px solid;
+    border-image: var(--border-gradient) 1;
     transition: all 0.3s ease;
     cursor: default;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    text-shadow: var(--text-shadow-body);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .skill-tag:hover {
@@ -551,12 +573,15 @@ nav {
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
-/* Contact Section */
+/* Contact Section - Enhanced Glassmorphism */
 .contact {
     text-align: center;
     background: var(--surface-color);
-    backdrop-filter: blur(var(--glass-blur));
-    border-top: 2px solid var(--border-color);
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+    border-top: 2px solid;
+    border-image: var(--border-gradient) 1;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .contact h2 {
@@ -568,7 +593,7 @@ nav {
     font-weight: 500;
     font-size: 1.15rem;
     margin-bottom: 2rem;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    text-shadow: var(--text-shadow-body);
 }
 
 /* Footer */
@@ -614,19 +639,69 @@ footer {
     transition-delay: 100ms;
 }
 
-.project-card:nth-child(3) {
-    transition-delay: 200ms;
-}
 
-@media (max-width: 768px) {
+
+/* ============================================ */
+/* COMPREHENSIVE RESPONSIVE DESIGN */
+/* ============================================ */
+
+/* ============================================ */
+/* COMPREHENSIVE RESPONSIVE DESIGN */
+/* ============================================ */
+
+/* Large Tablets and Small Desktops */
+@media (max-width: 1024px) {
     .hero h1 {
-        font-size: 3.5rem;
+        font-size: 4.5rem;
     }
 
-    .nav-links {
+    .hero .tagline {
+        font-size: 1.4rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+
+    .about-content,
+    .project-content {
+        padding: 2.5rem;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+
+    /* Typography Scaling */
+    .hero h1 {
+        font-size: 3.5rem;
+        letter-spacing: -0.04em;
+    }
+
+    .hero .tagline {
+        font-size: 1.3rem;
+        padding: 0 1rem;
+    }
+
+    .hero {
+        padding: 140px 0 100px;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    /* Navigation - Hide links */
+    .nav-links a:not(.theme-toggle) {
         display: none;
     }
 
+    .nav-links {
+        gap: 0;
+    }
+
+    /* Logo Scaling */
     .logo {
         font-size: 1.3rem;
     }
@@ -634,5 +709,345 @@ footer {
     .logo-image {
         width: 40px;
         height: 40px;
+    }
+
+    /* Single Column Layouts */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .skills-grid {
+        justify-content: center;
+    }
+
+    /* Card Padding Adjustments */
+    .about-content {
+        padding: 2rem;
+    }
+
+    .project-content {
+        padding: 2rem;
+    }
+
+    .about-content h2,
+    .section h2 {
+        font-size: 2rem;
+    }
+
+    .project-content h3 {
+        font-size: 1.4rem;
+    }
+
+    /* Button Sizing */
+    .btn {
+        padding: 1rem 2.5rem;
+        font-size: 1rem;
+    }
+
+    /* Contact Section */
+    .contact p {
+        font-size: 1.05rem;
+        padding: 0 1rem;
+    }
+}
+
+/* Mobile Landscape & Small Tablets */
+@media (max- width: 640px) {
+
+    /* Further Typography Reduction */
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero .tagline {
+        font-size: 1.1rem;
+    }
+
+    .hero {
+        padding: 120px 0 80px;
+    }
+
+    /* Compact Spacing */
+    .section {
+        padding: 50px 0;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Logo */
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    .logo-image {
+        width: 36px;
+        height: 36px;
+    }
+
+    /* Cards */
+    .about-content,
+    .project-content {
+        padding: 1.8rem;
+        border-radius: 1rem;
+    }
+
+    .about-content h2,
+    .section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .about-content p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .project-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .project-content p {
+        font-size: 1rem;
+    }
+
+    /* Skills */
+    .skill-tag {
+        padding: 0.7rem 1.4rem;
+        font-size: 0.9rem;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 0.9rem 2rem;
+        font-size: 0.95rem;
+    }
+
+    /* Theme Toggle */
+    .theme-toggle {
+        padding: 0.55rem;
+    }
+
+    .theme-toggle svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    /*  Footer */
+    footer {
+        font-size: 0.85rem;
+        padding: 1.5rem 0;
+    }
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+
+    /* Hero Section - Mobile Optimized */
+    .hero h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        line-height: 1.1;
+    }
+
+    .hero .tagline {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 2rem;
+    }
+
+    .hero {
+        padding: 100px 0 60px;
+    }
+
+    /* Very Compact Spacing */
+    .section {
+        padding: 40px 0;
+    }
+
+    .container {
+        padding: 0 12px;
+    }
+
+    /* Header */
+    header {
+        padding: 0.8rem 0;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .logo-image {
+        width: 32px;
+        height: 32px;
+        padding: 4px;
+    }
+
+    .logo span {
+        display: none;
+        /* Hide full name on very small screens */
+    }
+
+    /* Cards - Maximum Compactness */
+    .about-content,
+    .project-content {
+        padding: 1.5rem;
+        border-radius: 0.8rem;
+    }
+
+    .about-content h2,
+    .section h2 {
+        font-size: 1.6rem;
+        margin-bottom: 0.7rem;
+    }
+
+    .about-content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .project-content h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .project-content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1.2rem;
+    }
+
+    .project-link {
+        font-size: 0.9rem;
+    }
+
+    /* Skills - Smaller Tags */
+    .skill-tag {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 0.85rem 1.8rem;
+        font-size: 0.9rem;
+        border-radius: 1.5rem;
+    }
+
+    /* Contact */
+    .contact p {
+        font-size: 0.95rem;
+        padding: 0 0.5rem;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+        gap: 1.2rem;
+    }
+
+    /* Skills Grid - Responsive Wrapping */
+    .skills-grid {
+        gap: 0.7rem;
+    }
+
+    /* Theme Toggle */
+    .theme-toggle {
+        padding: 0.5rem;
+    }
+
+    .theme-toggle svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* Scroll Progress */
+    .scroll-progress-container {
+        height: 2px;
+    }
+
+    /* Increased opacity and enhanced shadows for mobile */
+    :root {
+        --surface-color: rgba(255, 255, 255, 0.20);
+    }
+
+    [data-theme="dark"] {
+        --surface-color: rgba(15, 23, 42, 0.20);
+    }
+
+    /* Enhanced text shadows for mobile */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+    }
+
+    [data-theme="dark"] h1,
+    [data-theme="dark"] h2,
+    [data-theme="dark"] h3,
+    [data-theme="dark"] h4,
+    [data-theme="dark"] h5,
+    [data-theme="dark"] h6 {
+        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.9), 0 0 25px rgba(96, 165, 250, 0.4);
+    }
+
+    .about-content p,
+    .project-content p,
+    .contact p,
+    .skill-tag {
+        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    [data-theme="dark"] .about-content p,
+    [data-theme="dark"] .project-content p,
+    [data-theme="dark"] .contact p,
+    [data-theme="dark"] .skill-tag {
+        text-shadow: 0 1px 8px rgba(0, 0, 0, 0.9), 0 0 12px rgba(96, 165, 250, 0.25);
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 320px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero .tagline {
+        font-size: 0.9rem;
+    }
+
+    .about-content,
+    .project-content {
+        padding: 1.2rem;
+    }
+
+    .about-content h2,
+    .section h2 {
+        font-size: 1.4rem;
+    }
+
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Landscape Orientation Adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        padding: 80px 0 60px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .section {
+        padding: 40px 0;
     }
 }
