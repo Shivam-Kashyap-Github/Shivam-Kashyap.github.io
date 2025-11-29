@@ -1,45 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Website</title>
+    <title>Shivam Kashyap | AI Driven Lead Software Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress"></div>
+    </div>
+
     <header>
-        <h1>Your Name</h1>
-        <p class="tagline">Welcome to my personal space on the internet</p>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="sk-logo.png" alt="SK Logo" class="logo-image">
+                    <span>Shivam Kashyap</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact">Contact</a>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <section class="about">
-        <h2>About Me</h2>
-        <p>
-            Hi! I'm <strong>Your Name</strong>. This is my simple classic website hosted on GitHub Pages.
-            You can use this space to introduce yourself, share your interests, showcase projects,
-            or link to your social profiles.
-        </p>
-    </section>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>AI Driven Lead Software Developer</h1>
+                <p class="tagline">Specializing in Development, Testing, Automation, Vibe Coding, and Gen AI Powered
+                    Systems.</p>
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+            </div>
+        </section>
 
-    <section class="projects">
-        <h2>Projects</h2>
-        <ul>
-            <li><strong>Project 1:</strong> Write something here…</li>
-            <li><strong>Project 2:</strong> Write something here…</li>
-            <li><strong>Project 3:</strong> Write something here…</li>
-        </ul>
-    </section>
+        <section id="about" class="section">
+            <div class="container">
+                <div class="about-content">
+                    <h2>About Me</h2>
+                    <p>
+                        Hi! I'm <strong>Shivam Kashyap</strong>. I am an AI Driven Lead Software Developer with
+                        <strong>4 years of experience</strong>.
+                        I specialize in architecting robust systems through Development, Testing, and Automation.
+                        My passion lies in <strong>Vibe Coding</strong> and creating innovative <strong>Gen AI powered
+                            systems</strong> that solve complex, real-world problems.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-    <section class="contact">
-        <h2>Contact</h2>
-        <p>You can reach me at:</p>
-        <p><a href="mailto:your@email.com" class="email">your@email.com</a></p>
-    </section>
+        <section id="projects" class="section">
+            <div class="container">
+                <h2>Featured Projects</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-content">
+                            <h3>Gen AI Automation Suite</h3>
+                            <p>Architect ed a scalable system leveraging LLMs to automate complex testing workflows and
+                                code generation, reducing manual effort by 40%.</p>
+                            <a href="#" class="project-link">View Project →</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-content">
+                            <h3>Intelligent Vibe Coder</h3>
+                            <p>Developed an AI-powered assistant that enhances developer productivity by understanding
+                                context and intent, streamlining the coding process.</p>
+                            <a href="#" class="project-link">View Project →</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-content">
+                            <h3>Automated Testing Framework</h3>
+                            <p>Engineered a high-performance, scalable testing framework designed for enterprise
+                                applications, ensuring 99.9% reliability and speed.</p>
+                            <a href="#" class="project-link">View Project →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <h2>Skills & Technologies</h2>
+                <div class="skills-grid">
+                    <span class="skill-tag">Gen AI</span>
+                    <span class="skill-tag">Vibe Coding</span>
+                    <span class="skill-tag">Automation</span>
+                    <span class="skill-tag">Testing</span>
+                    <span class="skill-tag">System Architecture</span>
+                    <span class="skill-tag">JavaScript/TypeScript</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">CI/CD</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2>Let's Work Together</h2>
+                <p>Have a project in mind or just want to say hi? I'd love to hear from you.</p>
+                <a href="mailto:your@email.com" class="btn btn-primary"
+                    style="background-color: white; color: var(--primary-color);">Get in Touch</a>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>© 2025 Your Name — All Rights Reserved</p>
+        <div class="container">
+            <p>© 2025 Shivam Kashyap — All Rights Reserved</p>
+        </div>
     </footer>
 
+    <script src="script.js"></script>
+
 </body>
+
 </html>
